@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>oracle.jdbc.driver.OracleDriver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:oracle:thin:@localhost:1521:xe</value>
+		</property>
+		<property name="username">
+			<value>hr</value>
+		</property>
+		<property name="password">
+			<value>hr</value>
+		</property>
+	</bean>
+	
+	<!-- member -->
+	<bean id="memDao" class="member.DaoImpl">
+		<constructor-arg>
+			<ref bean="dataSource" />
+		</constructor-arg>
+	</bean>
+	<bean id="memService" class="member.ServiceImpl">
+		<constructor-arg>
+			<ref bean="memDao" />
+		</constructor-arg>
+	</bean>
+	<bean id="MemController" class="member.MemController">
+		<property name="service">
+			<ref bean="memService" />
+		</property>
+	</bean>
+	
+	<!-- board -->
+	<bean id="boardDao" class="board.BoardDaoImpl">
+		<constructor-arg>
+			<ref bean="dataSource" />
+		</constructor-arg>
+	</bean>
+	<bean id="boardService" class="board.BoardServiceImpl">
+		<constructor-arg>
+			<ref bean="boardDao" />
+		</constructor-arg>
+	</bean>
+	<bean id="boardController" class="board.BoardController">
+		<constructor-arg>
+			<ref bean="boardService" />
+		</constructor-arg>
+	</bean>
+	
+	
+	<!-- imgBoard -->
+	
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	</bean>
+	<bean id="imgDao" class="img_board.DaoImpl">
+		<constructor-arg>
+			<ref bean="dataSource" />
+		</constructor-arg>
+	</bean>
+	<bean id="imgService" class="img_board.ServiceImpl">
+		<constructor-arg>
+			<ref bean="imgDao" />
+		</constructor-arg>
+	</bean>
+	<bean id="imgController" class="img_board.ImgBoardController">
+		<constructor-arg>
+			<ref bean="imgService" />
+		</constructor-arg>
+	</bean>
+	
+	
+	<!-- QA  -->
+	<bean id="qaDao" class="qa.QaDaoImpl">
+		<constructor-arg>
+			<ref bean="dataSource"/>
+		</constructor-arg>
+	</bean>
+	<bean id="qaService" class="qa.QaServiceImpl">
+		<constructor-arg>
+			<ref bean="qaDao"/>
+		</constructor-arg>
+	</bean>
+	<bean id="qaController" class="qa.QaController">
+		<constructor-arg>
+			<ref bean="qaService"/>
+		</constructor-arg>
+	</bean>
+	
+	<!-- movieInfo -->
+	<bean id="movieDao" class="movieInfo.MovieDaoImpl">
+		<constructor-arg>
+			<ref bean="dataSource" />
+		</constructor-arg>
+	</bean>
+	<bean id="movieService" class="movieInfo.MovieServiceImpl">
+		<constructor-arg>
+			<ref bean="movieDao" />
+		</constructor-arg>
+	</bean>
+	
+	<bean id="movieController" class="movieInfo.MovieController">
+		<constructor-arg>
+			<ref bean="movieService" />
+		</constructor-arg>
+	</bean>
+	
+	<!-- Reservation -->
+	<bean id="reservDao" class="reservation.ReservDaoImpl">
+		<constructor-arg>
+			<ref bean="dataSource"/>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="reservService" class="reservation.ReservServiceImpl">
+		<constructor-arg>
+			<ref bean="reservDao"/>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="reservController" class="reservation.ReservController">
+		<constructor-arg>
+			<ref bean="reservService"/>
+		</constructor-arg>
+	</bean>
+
+</beans>

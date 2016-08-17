@@ -1,0 +1,35 @@
+.small img {
+	border: none;
+	margin: 10px;
+	width: 60px;
+	height: 60px;
+}
+
+.large {
+	width: 200px;
+	height: 200px;
+}
+
+.hover {
+	color: blue;	
+}
+
+.starwars{
+	font-weight: bold;
+	color: #4C4C4C;
+}
+
+.himalayas{
+	font-weight: bold;
+	color: #4C4C4C;
+}
+
+.daeho{
+	font-weight: bold;
+	color: #4C4C4C;
+}
+
+.insideman{
+	font-weight: bold;
+	color: #4C4C4C;
+}

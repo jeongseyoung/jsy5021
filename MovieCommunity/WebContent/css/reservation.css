@@ -1,0 +1,77 @@
+#divMovie {		
+	height: 447px;
+	width: 1000px;	
+	margin-left: 20px;
+	position:relative; 
+	display:inline; 
+	border:0px solid red;
+	align: center;
+}
+
+#divMovie li {
+	font-family:dotum; 
+	height:22px; 
+	overflow:hidden; 
+	padding:1px 10px 0 15px; 
+	margin:3px 0 3px 0; 
+	line-height:22px;
+}
+
+#List {	
+	height:200px; 	
+	background-color:#fff; 
+	padding:2px 0 0 0; 
+	overflow: auto; 
+	display:block;
+	float: left;
+	margin-left: 30px;	
+	font-size: 13px;	
+	color:#7c7c7c;
+}
+#List ul li:hover{
+	background-color:#C4FDFF; 
+}
+#List ul li:active{
+	background-color:#a3d8ef; 
+}
+input[type="text"]{
+	padding: 10px;
+  	border: none;
+  	border-bottom: solid 2px #c9c9c9;
+  	-webkit-transition: border 0.3s;
+  	-moz-transition: border 0.3s;
+  	-o-transition: border 0.3s;
+  	transition: border 0.3s;
+  	font-size: 13px;
+  	font-weight: bold;	
+}
+
+#List div {	
+	font-weight: bold;	
+}
+#result {	
+	height:500px; 	
+	background-color:#fff; 
+	padding:2px 0 0 0; 
+	overflow: auto; 
+	display:block;
+	float: left;
+	margin-left: 30px;	
+	font-size: 13px;
+}
+
+#result div {	
+	font-weight: bold;	
+}
+#result #movie {	
+	color: #FF4848;
+	font-size: 17px;
+	font-weight: bold;	
+}
+
+#List ul li a {
+	text-decoration:none; 
+	color:black; 
+	font-size:12px; 
+	font-weight:bold
+}
